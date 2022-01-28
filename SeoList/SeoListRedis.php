@@ -10,16 +10,16 @@ class SeoListRedis implements SeoListInterface {
         $this->store->selectDb(6);
     }
 
-    public function add($url) {
+    public function set($url) {
         $this->store->setAndExpire($url, 0, self::EXPIRETIME);
         return true;
     }
 
-    public function remove($url) {
+    public function delete($url) {
         return false;
     }
 
-    public function exist($url) {
+    public function has($url) {
         return $this->store->exists($url);
     }
 

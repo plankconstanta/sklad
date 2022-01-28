@@ -4,19 +4,19 @@ interface SeoListInterface {
 * @param string $url
 * @return bool
 */
-public function add($url);
+public function set($url); // add
 
 /**
 * @param string $url
 * @return bool
 */
-public function remove($url);
+public function delete($url); // remove
 
 /**
 * @param string $url
 * @return bool
 */
-public function exist($url);
+public function has($url); // exist
 
 /**
 * return count elements in list

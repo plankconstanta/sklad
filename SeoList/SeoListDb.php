@@ -15,7 +15,7 @@ class SeoListDb implements SeoListInterface {
 
     }
 
-    public function add($url) {
+    public function set($url) {
         $hash = self::hash($url);
         $item = new SeoList();
         $item->setUrl($url);
@@ -24,11 +24,11 @@ class SeoListDb implements SeoListInterface {
         return true;
     }
 
-    public function remove($url) {
+    public function delete($url) {
         return false;
     }
 
-    public function exist($url) {
+    public function has($url) {
         $item = $this->getByUrl($url);
         return $item ? true : false;
     }

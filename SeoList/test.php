@@ -10,8 +10,8 @@ $url = SeoListHelper::clearUrl($url);
 $list = SeoListHelper::getList();
 
 if ($list && $list->count()) {
-    if (!$list->exist($url)) {
-        $list->add($url);
+    if (!$list->has($url)) {
+        $list->set($url);
     }
 
     $val = $list->inc($url);
