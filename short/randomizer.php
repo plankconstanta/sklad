@@ -25,14 +25,14 @@ function test(array $a, $M) {
     }
 }
 
-foreach (test($array, 3) as $item) {
+/*foreach (test($array, 3) as $item) {
     echo $item . PHP_EOL;
-}
+}*/
 
 // тоже самое но короче
-/*var_dump((fn(int $m = 1) => array_map(
-    fn(mixed $key) => $array[$key],
+var_dump( (static fn(int $m = 1) => array_map(
+    static fn(mixed $key) => $array[$key],
                 is_array($keys = array_rand($array = array_unique($array), ($cnt = count($array)) >= $m ? $m : $cnt)) ?
                     $keys : [$keys]
 )
-)(1));*/
+)(1));
